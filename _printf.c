@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 		switch (_bool(format, spec, i))
 		{
 			case 1:
-				s = _print_strin(va_arg(ap, void *), &s, &i);
+				s = _print_strin(va_arg(ap, char *), &s, &i);
 				break;
 			case 2:
 				s = s + _putchar(va_arg(ap, int));

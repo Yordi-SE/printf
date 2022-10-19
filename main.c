@@ -39,6 +39,7 @@ int main(void)
     _printf("Unknown:[%r]\n");
     printf("Unknown:[%r]\n");
     _printf("%s", NULL);
+    _printf("%s\n%s\n", "YORDANOS", "YORdi");
     printf("%d", NULL);
     return (0);
 }

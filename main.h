@@ -1,6 +1,7 @@
 #ifndef PRINT
 #define PRINT
 
+void print_array(int *array, int o);
 int _printf(const char *format, ...);
 int _print_strin(char *c, int *s, int *i);
 int _putchar(char c);

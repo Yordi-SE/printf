@@ -2,25 +2,23 @@
 /**
  * _print_number2 - print any number
  * @c: number to be printed
- * Return: int 
+ * Return: int
  */
 int _print_number2(long int c)
 {
-	int j;
-
-	int m;
-
 	int i;
 
 	char u = '-';
+
+	int j;
 
 	long int t;
 
 	long int r;
 
-	int *l;
+	int m;
 
-	const int s[] = {48, 49, 50, 51, 52, 53, 54, 55 ,56, 57};
+	int *l;
 
 	if (c < 0)
 	{
@@ -41,12 +39,28 @@ int _print_number2(long int c)
 			j++;
 		}
 	l[j] = m;
-	for (j = i - 1; j >= 0; j--)
-		for (t = 0; t < 10; t++)
-			if (l[j] == t)
-				write(1, s + t, 1);
+	print_array(l, i);
 	free(l);
 	return (i);
+}
+/**
+ * print_array - print array
+ * Return: void
+ * @array: array of int;
+ * @o: size
+ */
+void print_array(int *array, int o)
+{
+	int t;
+
+	int j;
+
+	const int s[] = {48, 49, 50, 51, 52, 53, 54, 55, 56, 57};
+
+	for (j = o - 1; j >= 0; j--)
+		for (t = 0; t < 10; t++)
+			if (array[j] == t)
+				write(1, s + t, 1);
 }
 /**
  * count_size - count size of an array

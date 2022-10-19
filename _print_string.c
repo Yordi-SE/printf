@@ -8,7 +8,7 @@
  */
 int _print_strin(char *c, int *s, int *i)
 {
-	int j;
+	int j = 0;
 
 	if (c == NULL)
 	{

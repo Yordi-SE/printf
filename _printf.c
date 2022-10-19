@@ -15,29 +15,34 @@ int _printf(const char *format, ...)
 	int s = 0;
 
 	va_start(ap, format);
-	for (i = 0; format[i] != '\0'; i++)
+	if (format)
 	{
-		switch (_bool(format, spec, i))
+		for (i = 0; format[i] != '\0'; i++)
 		{
-			case 1:
-				s = _print_strin(va_arg(ap, char *), &s, &i);
-				break;
-			case 2:
-				s = s + _putchar(va_arg(ap, int));
-				i++;
-				break;
-			case 3:
-				s = s + _print_number2(va_arg(ap, int));
-				i++;
-				break;
-			case 4:
-				write(1, &spec[2], 1);
-				s++;
-				i++;
-				break;
-			default:
-				s = s + _putchar(format[i]);
-				break;
+			switch (_bool(format, spec, i))
+			{
+				case 1:
+					s = _print_strin(va_arg(ap, char *),
+							&s, &i);
+					break;
+				case 2:
+					s = s + _putchar(va_arg(ap, int));
+					i++;
+					break;
+				case 3:
+					s = s + _print_number2(va_arg(ap, int))
+						;
+					i++;
+					break;
+				case 4:
+					write(1, &spec[2], 1);
+					s++;
+					i++;
+					break;
+				default:
+					s = s + _putchar(format[i]);
+					break;
+			}
 		}
 	}
 	va_end(ap);

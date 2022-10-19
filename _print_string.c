@@ -10,6 +10,11 @@ int _print_strin(char *c, int *s, int *i)
 {
 	int j;
 
+	if (c == NULL)
+	{
+		return(*s);
+		*i = *i + 1;
+	}
 	for (j = 0; c[j] != '\0'; j++)
 		;
 	write(1, c, j);

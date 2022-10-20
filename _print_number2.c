@@ -4,7 +4,7 @@
  * @c: number to be printed
  * Return: int
  */
-int _print_number2(long int c)
+int _print_number2(int c)
 {
 	int i;
 
@@ -18,10 +18,13 @@ int _print_number2(long int c)
 
 	int m;
 
+	int n;
+
 	int *l;
 
 	if (c < 0)
 	{
+		n = 1;
 		c = (c * -1);
 		write(1, &u, 1);
 	}
@@ -41,6 +44,7 @@ int _print_number2(long int c)
 	l[j] = m;
 	print_array(l, i);
 	free(l);
+	n == 1 ? i = i + 1 : i;
 	return (i);
 }
 /**

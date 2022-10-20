@@ -4,7 +4,7 @@
  * @c: number to be printed
  * Return: int
  */
-int _print_number2(long int c)
+int _print_number2(int c)
 {
 	int i;
 
@@ -12,23 +12,26 @@ int _print_number2(long int c)
 
 	int j;
 
-	long int t;
+	int t;
 
-	long int r;
+	int r;
 
 	int m;
 
 	int *l;
 
+	int n;
+
 	if (c < 0)
 	{
-		c = (long int) (c * -1);
+		n = 1;
+		c = (c * -1);
 		write(1, &u, 1);
 	}
-	i = count_size((long int) c);
+	i = count_size(c);
 	l = malloc(sizeof(int) * i);
-	t = (long int) c / 10;
-	m = (long int) c % 10;
+	t = c / 10;
+	m = c % 10;
 	j = 0;
 	while
 		(t > 0) {
@@ -41,6 +44,7 @@ int _print_number2(long int c)
 	l[j] = m;
 	print_array(l, i);
 	free(l);
+	(n != 1) ? (i = i - 1) : i;
 	return (i);
 }
 /**

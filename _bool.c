@@ -8,7 +8,9 @@
  */
 int _bool(const char *format, char *spec, int i)
 {
-
+	if (!format || (format[0] == '%' && !format[1]) || (format[0] ==
+				'%' && format[1] == ' ' && !format[2]))
+		return (-1);
 	if ((format[i] == spec[2]) &&
 			(format[i + 1] == spec[1]))
 		return (1);

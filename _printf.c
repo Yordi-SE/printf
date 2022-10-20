@@ -14,14 +14,15 @@ int _printf(const char *format, ...)
 
 	int s = 0;
 
-	if (format == NULL || (format[0] == '%' && !format[1]) || (format[0] ==
-				'%' && format[1] == ' ' && !format[2]))
+	if (format == NULL)
 		return (0);
 	va_start(ap, format);
 	for (i = 0; format[i] != '\0'; i++)
 	{
 		switch (_bool(format, spec, i))
 		{
+			case -1:
+				return (-1);
 			case 1:
 				s = _print_strin(va_arg(ap, char *), &s, &i);
 				break;

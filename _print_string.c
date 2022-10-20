@@ -17,7 +17,7 @@ int _print_strin(char *c, int *s, int *i)
 	}
 	for (j = 0; c[j] != '\0'; j++)
 		;
-	write(1, c, j);
+	write(1, c, j + 1);
 	*i = *i + 1;
 	return (*s + j);
 }

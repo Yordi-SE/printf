@@ -71,7 +71,7 @@ void print_array(int *array, int o)
  * @c: long int
  * Return: int
  */
-int count_size(unsigned int c)
+int count_size(int c)
 {
 	int t;
 

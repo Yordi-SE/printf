@@ -4,7 +4,7 @@
  * @c: number to be printed
  * Return: int
  */
-int _print_number2(int c)
+int _print_number2(long int c)
 {
 	int i;
 

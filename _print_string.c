@@ -13,7 +13,7 @@ int _print_strin(char *c, int *s, int *i)
 	if (c == NULL)
 	{
 		*i = *i + 1;
-		return(*s);
+		return (*s);
 	}
 	for (j = 0; c[j] != '\0'; j++)
 		;
